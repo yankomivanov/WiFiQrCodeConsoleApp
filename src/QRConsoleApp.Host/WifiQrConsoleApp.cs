@@ -36,9 +36,10 @@ internal static class WifiQrConsoleApp
 
     private static void GenerateAndSaveImage(Bitmap qrCodeAsBitmap, string ssid)
     {
-        string datePart = DateTime.Now.ToString("yyyy_MM_dd_hhmmss");
-        var fileName = $"{ssid}_{datePart}.png";
-        var dirName = $"results_{datePart}";
+        var now = DateTime.Now;
+
+        var fileName = $"{ssid}_{now:yyyy_MM_dd_hhmmss}.png";
+        var dirName = $"results_{now:yyyy_MM_dd}";
 
         Directory.CreateDirectory(dirName);
 
